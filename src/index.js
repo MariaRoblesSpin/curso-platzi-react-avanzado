@@ -5,8 +5,12 @@ import { ApolloProvider } from 'react-apollo'
 
 import { App } from './App'
 
-// const client = new ApolloClient({
-//     uri:''
-// })
+const client = new ApolloClient({
+  uri: 'https://petgram-server-maria-robles.mariarobles.now.sh/graphql'
+})
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
+  , document.getElementById('app'))
