@@ -30,7 +30,7 @@ export const ListOfCategories = () => {
   const { categories, loading } = useCategoriesData()
   const [showFixed, setShowFixed] = useState(false)
   // useEffect funciona como el componentDidMount
-  
+
   useEffect(function () {
     const onScroll = event => {
       const newShowFixed = window.scrollY > 200
@@ -47,7 +47,7 @@ export const ListOfCategories = () => {
       {
         loading
           ? <Item key='loading'> Cargando...</Item>
-          : categories.map(category => <Item key={category}><Category {...category} /></Item>)
+          : categories.map(category => <Item key={category}><Category {...category} path={`/pet/${category.id}`} /></Item>)
       }
     </List>
   )
